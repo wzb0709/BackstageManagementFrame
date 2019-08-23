@@ -1,0 +1,21 @@
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.logo {
+  height: 64px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.ant-tabs-bar{
+  border-bottom: 0 !important;
+}
+.ant-tabs-tab-active{
+  border-bottom: 1px solid #e8e8e8;
+}

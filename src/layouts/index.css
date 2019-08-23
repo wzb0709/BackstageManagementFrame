@@ -1,0 +1,17 @@
+.background {
+  height: 100vh;
+  width: 100vw; }
+
+.background {
+  position: relative;
+  background-image: url("../assets/login_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.title {
+  color: #FFF;
+  line-height: 64px;
+  height: 100%;
+  font-size: 27px; }
+
+/*# sourceMappingURL=index.css.map */
