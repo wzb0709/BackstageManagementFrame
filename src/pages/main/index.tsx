@@ -13,6 +13,7 @@ export interface IFormItem {
 interface IProps {
   readonly dispatch: any,
   readonly productList:Array<IProductItem>
+  readonly loading:{global:boolean}
 }
 
 const Main:FC<IProps> = (props) => {
@@ -26,6 +27,10 @@ const Main:FC<IProps> = (props) => {
       type:'product/readProduct'
     })
   },[])
+
+  useEffect(() => {
+    console.log(props.loading)
+  },[props.loading])
 
   const columns:ColumnProps<Object>[] = [
     {dataIndex:'title',title:'标题'},
@@ -93,13 +98,15 @@ const Main:FC<IProps> = (props) => {
         dataSource={props.productList}
         columns={columns}
         rowKey='id'
+        loading={props.loading.global}
       />
     </Fragment>
   );
 }
 
 const mapStateToProps = (state:any) => ({
-  productList:state.product.productList
+  productList:state.product.productList,
+  loading:state.loading
 })
 
 export default connect(mapStateToProps)(Main);
