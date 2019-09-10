@@ -59,6 +59,11 @@ const MainLayout = (props: any) => {
     })
   }, [props.children.props.location.pathname])
 
+  //当刷新参数变化时将其再次变化实现刷新
+  useEffect(() => {
+    if(!refresh)  setRefresh(true)
+  },[refresh])
+
   //tabItem点击事件
   const handleTabClick = (key: string) => {
     const tab = tabs.find((tab: ITab) => tab.key === key)
@@ -81,7 +86,6 @@ const MainLayout = (props: any) => {
   const handleSelectMenu = (param: ClickParam) => {
     if(param.key === '0'){
       setRefresh(false)
-      setRefresh(true)
     }else if(param.key === '1'){
       const tmpTab : ITab | undefined = tabs.find((item:ITab) => item.key === activeKey)
       if(tmpTab) setTabs([tmpTab])

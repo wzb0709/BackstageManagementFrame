@@ -15,7 +15,7 @@ const config: IConfig =  {
       dll: true,
       locale: {
         enable: true,
-        default: 'en-US',
+        default: 'zh-CN',
       },
     }],
   ],
