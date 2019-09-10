@@ -8,6 +8,7 @@ interface IProps{
   readonly onCancel:(e: React.MouseEvent<HTMLElement>) => void
   form:WrappedFormUtils
   readonly onOk:(values:IFormItem) => void
+  readonly initialValue:IFormItem
 }
 
 
@@ -38,6 +39,7 @@ const ProductModal:FC<IProps> = (props) => {
     >
       <FormItem label='产品标题' {...formItemLayout}>
         {getFieldDecorator('title', {
+          initialValue:props.initialValue.title,
           rules: [
             {
               required: true,
@@ -48,6 +50,7 @@ const ProductModal:FC<IProps> = (props) => {
       </FormItem>
       <FormItem label='产品描述' {...formItemLayout}>
         {getFieldDecorator('description', {
+          initialValue:props.initialValue.description,
           rules: [
             {
               required: true,

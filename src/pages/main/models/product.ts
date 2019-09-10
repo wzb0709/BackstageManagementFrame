@@ -33,6 +33,13 @@ export default {
       message.success('删除成功！')
       return {productList}
     },
+    update(state:IProduct,{payload:productItem}:{payload: IProductItem}){
+      const id = productItem.id
+      const index = state.productList.findIndex((item) => item.id === id)
+      if(index === -1) {message.error('产品ID不对应'); return state}
+      state.productList[index] = productItem
+      return state
+    }
   },
   effects: {
     * readProduct({},{ call, put }: any) {
@@ -45,6 +52,9 @@ export default {
     },
     * deleteProduct({ payload: id }: { payload: number }, { put }: any) {
       yield put({ type: 'delete', payload: id })
+    },
+    * updateProduct({ payload: item }: { payload: IProductItem }, { put }: any) {
+      yield put({ type: 'update', payload: item })
     },
   },
 }
