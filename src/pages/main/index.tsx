@@ -4,6 +4,7 @@ import { Button, Divider, Row, Table } from 'antd'
 import { ColumnProps } from 'antd/lib/table'
 import ProductModal from '@/pages/main/productModal'
 import { IProductItem } from '@/pages/main/models/product'
+import CBreadcrumb from '@/component/breadcrumb'
 
 export interface IFormItem {
   readonly title:string,
@@ -27,10 +28,6 @@ const Main:FC<IProps> = (props) => {
       type:'product/readProduct'
     })
   },[])
-
-  useEffect(() => {
-    console.log(props.loading)
-  },[props.loading])
 
   const columns:ColumnProps<Object>[] = [
     {dataIndex:'title',title:'标题'},

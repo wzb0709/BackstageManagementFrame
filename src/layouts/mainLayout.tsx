@@ -5,6 +5,8 @@ import { menuList } from '@/utils/menuList'
 import { router, Link } from 'umi'
 import { IMenuItem } from '@/utils/menuList'
 import { ClickParam } from 'antd/lib/menu'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+
 
 const { Header, Content, Sider } = Layout
 const { SubMenu } = Menu
@@ -61,8 +63,8 @@ const MainLayout = (props: any) => {
 
   //当刷新参数变化时将其再次变化实现刷新
   useEffect(() => {
-    if(!refresh)  setRefresh(true)
-  },[refresh])
+    if (!refresh) setRefresh(true)
+  }, [refresh])
 
   //tabItem点击事件
   const handleTabClick = (key: string) => {
@@ -84,11 +86,11 @@ const MainLayout = (props: any) => {
 
   //右侧下拉菜单点击事件
   const handleSelectMenu = (param: ClickParam) => {
-    if(param.key === '0'){
+    if (param.key === '0') {
       setRefresh(false)
-    }else if(param.key === '1'){
-      const tmpTab : ITab | undefined = tabs.find((item:ITab) => item.key === activeKey)
-      if(tmpTab) setTabs([tmpTab])
+    } else if (param.key === '1') {
+      const tmpTab: ITab | undefined = tabs.find((item: ITab) => item.key === activeKey)
+      if (tmpTab) setTabs([tmpTab])
     }
   }
 
@@ -174,17 +176,29 @@ const MainLayout = (props: any) => {
               <Tabs.TabPane tab={tab.title} key={tab.key}/>
             ))}
           </Tabs>
-          <div
-            style={{
-              padding: 24,
-              background: '#fff',
-              height: 705,
-              overflowY: 'auto',
-            }}
-          >
-            {refresh && <Fragment>
-              {props.children}
-            </Fragment>}
+          <div style={{position:"relative"}}>
+            <TransitionGroup>
+              <CSSTransition key={props.children.props.location.pathname} classNames="fade spread" timeout={1000}>
+                <div
+                  style={{
+                    padding: 24,
+                    background: '#fff',
+                    height: 705,
+                    overflowY: 'auto',
+                    position: 'absolute',
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    right: 0,
+                    width: '100%',
+                  }}
+                >
+                  {refresh && <Fragment>
+                    {props.children}
+                  </Fragment>}
+                </div>
+              </CSSTransition>
+            </TransitionGroup>
           </div>
         </Content>
       </Layout>

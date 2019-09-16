@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { Fragment, FC } from 'react'
+import { Link } from 'umi'
 
-export default function() {
+const SubPage:FC = () => {
+
+
   return (
-    <div>this is sub page</div>
-  );
+    <Fragment>
+      <div>this is sub page</div>
+      <Link to={'/sub/list/detail/100'} >Go to detail</Link>
+    </Fragment>
+  )
 }
+
+export default SubPage

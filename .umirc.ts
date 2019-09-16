@@ -1,10 +1,10 @@
-import { IConfig } from 'umi-types';
+import { IConfig } from 'umi-types'
 
 // ref: https://umijs.org/config/
-const config: IConfig =  {
+const config: IConfig = {
   treeShaking: true,
-  sass:{},
-  history:'hash',
+  sass: {},
+  history: 'hash',
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
@@ -21,16 +21,20 @@ const config: IConfig =  {
   ],
   routes: [
     {
-      path:'/',
-      component:'../layouts/index',
-      routes:[
-        {path:'/',component:'./index'},
-        {path:'/login',component:'./login/index'},
-        {path:'/main/list',component:'./main/index'},
-        {path:'/sub/list',component:'./sub/index'},
+      path: '/',
+      component: '../layouts/index',
+      routes: [
+        { path: '/', component: './index' },
+        { path: '/login', component: './login/index' },
+        { path: '/main/list', component: './main/index' },
+        { path: '/sub', component: './sub/breadcrumb', routes: [
+            { path: '/sub/list', component: './sub/index' },
+            { path: '/sub/list/detail/:id', component: './sub/detail' },
+          ],
+        },
       ],
     },
-  ]
+  ],
 }
 
-export default config;
+export default config
