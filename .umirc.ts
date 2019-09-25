@@ -32,10 +32,6 @@ const config: IConfig = {
             { path: '/sub/list/detail/:id', component: './sub/detail' },
           ],
         },
-        { path: '/user', component: './user/breadcrumb', routes: [
-            { path: '/user/list', component: './user/user' },
-          ],
-        },
       ],
     },
   ],
