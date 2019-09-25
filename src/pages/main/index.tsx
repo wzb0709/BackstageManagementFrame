@@ -74,11 +74,11 @@ const Main: FC<IProps> = (props) => {
     setId(0)
   }
 
-  const handleConfirmAddProduct = (values: IFormItem) => {
+  const handleConfirmAddProduct = async (values: IFormItem) => {
     if (id !== 0){
-      handleConfirmUpdate(values)
+      await handleConfirmUpdate(values)
     } else {
-      dispatch({
+      await dispatch({
         type: 'product/addProduct',
         payload: { ...values, id: '' },
       })
@@ -93,8 +93,8 @@ const Main: FC<IProps> = (props) => {
     setVisible(true)
   }
 
-  const handleConfirmUpdate = (values: IFormItem) => {
-    dispatch({
+  const handleConfirmUpdate = async (values: IFormItem) => {
+    await dispatch({
       type: 'product/updateProduct',
       payload: { ...values, id },
     })
