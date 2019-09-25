@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98236c58-3d71-4378-8a66-1c5663b5d791" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.umirc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.umirc.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mock/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mock/product.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/sub/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sub/index.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="98236c58-3d71-4378-8a66-1c5663b5d791" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +98,7 @@
       <workItem from="1568876150746" duration="1210000" />
       <workItem from="1569208123369" duration="862000" />
       <workItem from="1569287935641" duration="6428000" />
-      <workItem from="1569373776804" duration="14942000" />
+      <workItem from="1569373776804" duration="15293000" />
     </task>
     <servers />
   </component>
