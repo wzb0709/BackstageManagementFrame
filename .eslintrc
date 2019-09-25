@@ -1,3 +1,7 @@
 {
-  "extends": "eslint-config-umi"
+  "extends": "eslint-config-umi",
+  "rules": {
+    "jsx-a11y/anchor-is-valid":"off",
+    "jsx-a11y/anchor-has-content":"off"
+  }
 }

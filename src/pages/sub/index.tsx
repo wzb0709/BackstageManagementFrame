@@ -2,8 +2,6 @@ import React, { Fragment, FC } from 'react'
 import { Link } from 'umi'
 
 const SubPage:FC = () => {
-
-
   return (
     <Fragment>
       <div>this is sub page</div>
